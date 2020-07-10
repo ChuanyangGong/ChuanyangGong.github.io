@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day4</title>
+    <style>
+        .font_Mico_YH {
+            font-family: 'Microsoft YaHei', 'Hiragino Sans GB';
+        }
+
+        .font_20px {
+            font-size: 20px;
+        }
+
+        .font_bold {
+            font-weight: bold;
+        }
+
+        .font_style {
+            font-style: italic;
+        }
+
+        .text_align {
+            text-align: center;
+        }
+
+        .text_decoration {
+            text-decoration: line-through;
+        }
+
+        .text_indent {
+            text-indent: 2em;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>CSS字体属性</h3>
+    <h4>1.字体系列</h4>
+    <p>CSS用<strong>font-family</strong>属性定义文本的字体系列<br>
+        p { font-family: '微软雅黑', 'Microsoft YaHei';}</p>
+    <p>写多个字体的兼容性较好<br>
+        · 通常给body标签设置字体格式，常用的有'Microsoft YaHei', tahoma, arial, 'Hiragino Sans GB'</p>
+    <p class="font_Mico_YH">微软雅黑</p>
+
+    <h4>2.字体大小</h4>
+    <p>使用font-size属性定义大小，单位是px（像素），尽量不要用默认大小，所有字体给定个具体值</p>
+    <p class='font_20px'>20px字体</p>
+    <p>标题标签比较特殊，需要单独指定大小，不能通过body标签设置大小</p>
+
+    <h4>3.字体粗细</h4>
+    <p>使用font-weight属性设置，常用值为：normal, bold, lighter, number</p>
+    <p>提倡使用number，不要加单位</p>
+    <p class='font_bold'>bold字体</p>
+
+    <h4>4.文字样式</h4>
+    <p>font-style，斜体:italic，正常:normal，主要用来让倾斜的字体不倾斜</p>
+    <p class="font_style">斜体</p>
+
+    <h4>5.复合属性</h4>
+    <p>font: font-style font-weight font-size/line-weight font-family <br>
+        顺序不能变，有格式要求，用空格隔开，必须保留font-size和font-family这两个属性</p>
+
+    <h3>文本属性</h3>
+    <h4>1.文本颜色</h4>
+    <table border="1" cellspacing='0'>
+        <thead>
+            <tr>
+                <th>表示方法</th>
+                <th>属性值</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>预定义的颜色值</td>
+                <td>red, green, blue</td>
+            </tr>
+            <tr>
+                <td>十六进制</td>
+                <td>#FF0000, ...</td>
+            </tr>
+            <tr>
+                <td>RGB代码</td>
+                <td>rgb(255,0,0) 或 rgb(100%,0%,0%)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>2.文本对齐</h4>
+    <p>text-align属性，只能设置水平对齐格式,本质是让在盒子里的文字进行对齐</p>
+    <table border="1" cellspacing='0'>
+        <thead>
+            <tr>
+                <th>属性值</th>
+                <th>解释</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>left</td>
+                <td>左对齐（默认值）</td>
+            </tr>
+            <tr>
+                <td>center</td>
+                <td>居中对齐</td>
+            </tr>
+            <tr>
+                <td>right</td>
+                <td>右对齐</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class='text_align'>居中对齐</p>
+
+    <h4>3.装饰文本</h4>
+    <p>text-decoration属性，给文字加线，默认是没有，可以加在上中下，取值为none, underline, overline, line-through</p>
+    <p class='text_decoration'>删除线</p>
+
+    <h4>4.文本缩进</h4>
+    <p>text-indent : xx px。让文本的首行缩进xx像素值，可以为负值。<br>
+        xxem，当前元素xx个文字大小的距离，是相对单位。（这个非常好用）
+    </p>
+    <p class='text_indent'>首行缩进两个字符<br>
+        这是第二行。</p>
+
+    <h4>5.行间距</h4>
+    <p>line-height : xx px, 包括上间距、文本高度和下间距三部分</p>
+
+    <h3>CSS的引入方式</h3>
+    <p>并不是只能在style标签里引入，按照CSS样式数位的位置，可以分为三类：<br>
+        1.行内样式表
+        2.内部样式表
+        3.外部样式表</p>
+
+    <h4>1.内部样式表</h4>
+    <p>就是把样式写到了html文件的内部，前面使用的都是内部样式表，单独放在style标签里，style标签理论上可以放在html文件的任何地方，但一般放在head标签里</p>
+    <p>此种方式可以控制这个页面中的元素样式。代码结构清晰，但并没有完全分离html和css</p>
+
+    <h4>2.行内样式表</h4>
+    <p>行内样式表是在元素内部的style属性中设定CSS格式，适用于比较简单的修改样式<br>
+    如: <strong>p style = "color: red; font-size: 12px;"</strong>  </p>
+    <p style = "color: yellowgreen; font-size: 12px;">青春不常在，抓紧谈恋爱</p>
+    <P>并没有体现结构与样式相分离，一般使用的比较少</P>
+
+    <h4>3.外部样式表（最常用）</h4>
+    <p style = "text-indent: 2em;">实际开发都是外部样式表，适合于样式比较多的情况。核心是单独写到CSS文件中，之后把CSS引入到HTML页面中使用</p>
+    <p>分两步：<br>
+    1.新建.css后缀名的文件（在这个文件里只有样式，没有文件，不用写style标签）<br>
+    2.在HTML页面中，使用link标签引入这个文件<br>
+    <strong>link rel = "stylesheet" href = "css文件路径"</strong>写在head里</p>
+
+    <h3>综合案例</h3>
+    <a href="example/news.html" target="_blank">新闻案例</a>
+
+    <h3>chrome调试工具（非常重要）</h3>
+    <h4>1.打开调试工具</h4>
+    <p>打开Chrome浏览器，按下<strong class = 'red'>F12键</strong>或者<strong class = 'red'>右击页面空白处->检查</strong></p>
+
+    <h4>2.使用调试工具</h4>
+    <p>① <strong class = 'red'>Ctrl+滚轮</strong>可以放大开发工具代码大小<br>
+    ②左边是HTML元素结构，右边是CSS样式<br>
+    ③右边CSS样式可以改动数值（左右箭头或者直接输入）和检查颜色<br>
+    ④<strong class = 'red'>Ctrl+0</strong>复原浏览器大小<br>
+    ⑤如果点击元素，发现右侧没有样式引入，极有可能是类名或样式引入错误<br>
+    ⑥如果有样式，但样式前面有<strong class = 'red'>黄色感叹号提示</strong>则样式属性书写错误
+    </p>
+</body>
+
+</html>
