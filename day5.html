@@ -43,6 +43,62 @@
         input:focus {
             background-color: yellowgreen;
         }
+
+        .div_box {
+            height: 200px;
+            background-color: yellow;
+        }
+
+        .span_box {
+            height: 180px;
+            width: 100px;
+            background-color: red;
+            display: inline-block;
+        }
+
+        .case {
+            display: block;
+            width: 230px;
+            height: 40px;
+            background-color: #55585a;
+            font-size: 14px;
+            color: #ffffff;
+            text-indent: 2em;
+            line-height: 40px;
+        }
+
+        .case:hover {
+            background-color: #ff6700;
+            color: #ffff;
+        }
+
+        .bgi {
+            width: 200px;
+            height: 100px;
+            background-image: url(images/down.png);
+        }
+
+        .bgp {
+            width: 200px;
+            height: 100px;
+            background-image: url(images/up.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: pink;
+        }
+
+        .case2 {
+            width: 113px;
+            height: 40px;
+            /* background-color: pink; */
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 40px;
+            background-image: url(images/title_sprite.png);
+            background-repeat: no-repeat;
+            background-position: -34px center;
+            text-indent: 1.5em;
+        }
     </style>
 </head>
 
@@ -127,6 +183,129 @@
     <p>鼠标点击地下的小框底色就会变哦！</p>
     <input type="text">
 
+    <h2>CSS的元素显示模式</h2>
+    <p>了解元素的显示模式可以更好的让我们对网页进行布局</p>
+    <h5>1什么是元素显示模式？</h5>
+    <p>作用：网页额的标签非常多，在不同的地方会用到不同类型的标签，了解他们的特点<span class="red">可以更好的布局我们的网页</span>。 <br>
+        元素显示模式就是<span class="red">元素（标签）以什么方式进行显示</span>，比如div自己占一行，span一行可以放多个。 <br>
+        HTML元素一般可以分为<strong class="red">块元素</strong>和<strong class="red">行内元素</strong>两种类型 <br>
+    </p>
+
+    <h4>1.块元素</h4>
+    <p>常见的块元素有h1-h6,p,div,ul,ol,li等，其中<span class="red">div</span>是典型的块元素 <br>
+        <strong>块元素额特点：</strong> <br>
+        ① 自己独占一行 <br>
+        ② 高度，宽度，外边距和内边距都可以控制。<br>
+        ③ 宽度默认是容器（父级宽度）的100% <br>
+        ④ 是一个容器及盒子，里面可以放行内或块级元素。
+    </p>
+    <p><strong class="red">注意：</strong> <br>
+        · 文字类元素里面不能再放块级元素 <br>
+        · p里面不能放div</p>
+
+    <h4>2.行内元素</h4>
+    <p>常见的有a，strong，b，em，i，del，span等，其中<span class="red">span</span>是最典型的行内元素，有的地方也将行内元素称为<span class="red">内联元素</span>
+        <br>
+        行内元素的特点： <br>
+        ① 相邻行内元素在一行上，一行可以显示多个。 <br>
+        ② 高、宽的设置是无效的。
+        ③ 默认宽度就是它的本身内容的宽度。 <br>
+        ④ 行内元素只能容纳文本或其他行内元素</p>
+    <p><strong class="red">注意</strong><br>
+        · 连接里不能再放连接 <br>
+        · 特殊情况连接a 里面可以放块级元素，但是给a转换一下块级模式最安全。</p>
+
+    <h4>3.行内块元素</h4>
+    <p>在行内元素中有几个特殊的标签--img /、inout /、td，它们<span class="red">同时具有块元素和行内元素的特点</span> <br>
+        行内块元素的特点: <br>
+        ① 和相邻行内元素在一行上，但它们之间会有空白间隙。一行可以显示多个 <br>
+        ② 默认宽度就是它本身内容的宽度。 <br>
+        ③ 高度，行高，外边距，内边距都可以控制</p>
+
+    <h4>4.显示模式的转换</h4>
+    <p>特殊情况下，我们需要元素模式的转换，简单理解：一个模式的元素需要另一个模式的特性，比如想要增加a的触发范围</p>
+    <p class="red">· 转换为块元素： display:block</p>
+    <p class="red">· 转换为行内元素： display:inline</p>
+    <p class="red">· 转换为行内块元素： display:inline-block</p>
+
+    <div class="div_box">
+        <span class="span_box">1121212</span>
+        <span class="span_box">15151</span>
+        <span class="span_box">1551515</span>
+    </div>
+
+    <h4>简洁版小米侧边栏案例</h4>
+    <a href="#" class="case">手机 电话卡</a>
+    <a href="#" class="case">电视 盒子</a>
+    <a href="#" class="case">笔记本 平板</a>
+    <a href="#" class="case">出行 穿戴</a>
+    <a href="#" class="case">智能 路由器</a>
+    <a href="#" class="case">健康 儿童</a>
+    <a href="#" class="case">耳机 音响</a>
+
+    <h4>5.一个小技巧 单行文字垂直居中</h4>
+    <p><span class="red">让文字的行高等于盒子的高度</span>就可以做到垂直居中</p>
+
+    <h2>CSS的背景</h2>
+    <p>通过背景属性，可以给页面元素添加背景样式 <br>
+        背景属性可以设计背景颜色，背景图片，背景平铺，背景图片位置、背景图片固定等。</p>
+    <h4>1.背景颜色</h4>
+    <p>background-color，可以设置为透明:transparent（默认的）\color值</p>
+
+    <h4>2.背景图片</h4>
+    <p><span class="red">background-image</span>属性描述了元素的背景图像，实际开发中常见于logo或者一些装饰性小图片或者是超大的背景图片，优点是非常便于通知位置（精灵图也是一种运用场景）
+    </p>
+    <div class="box">background-image : none | url (url)</div>
+    <div class="bgi"></div>
+
+    <h4>3.背景平铺</h4>
+    <p>如果需要爱HTML页面上对背景图像进行平铺，可以使用<span class="red">background-repeat</span>属性 <br></p>
+    <div class="box">background-repeat : repeat | no-repeat | repeat-x repeat-y</div>
+
+    <h4>4.背景图片位置（非常重要）</h4>
+    <p>利用<span class="red">background-position</span>可以修改图片在背景中的位置</p>
+    <div class="box">background-position: x y;</div>
+    <p>可以使用方位名词或精确单位。如果缺失一个参数值，则默认居中</p>
+    <table>
+        <thead>
+            <tr>
+                <th>参数值</th>
+                <th>说明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>length</td>
+                <td>百分数|由浮点数字和单位标识组成的长度值</td>
+            </tr>
+            <tr>
+                <td>position</td>
+                <td>top|center|bottom|right等方位名词</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="bgp"></div>
+
+    <h4>背景位置案例</h4>
+    <h3 class="case2">
+        成长守护平台
+    </h3>
+
+    <h4>超大背景案例</h4>
+    <a href="example/background.html" target="_blank">超大背景案例连接</a>
+
+    <h4>5.背景图像固定（背景附着）</h4>
+    <p>通过background-attachment属性设置是否固定或者随着页面的其余部分滚动，可以用来做视差滚动</p>
+
+    <div class="box">background-attachment : scroll | fixed</div>
+
+    <h4>6.背景复合写法</h4>
+    <p>为了简化背景属性代码，我们可以将这些属性合并简写在同一个属性<span class="red">background</span>中。没有特定的顺序要求，一般写为： <br>
+        <span class="red">background:背景颜色 背景图片地址 背景平铺 背景图像滚动 背景图片位置</span></p>
+
+    <h4>7.背景色半透明</h4>
+    <p>不用background-color，用background时，颜色部分用rgba(0, 0, 0, 0.3)，最后一个参数是透明度</p>
 
 </body>
 
