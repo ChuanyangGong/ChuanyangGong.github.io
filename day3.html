@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,19 +10,23 @@
         div {
             color: red;
         }
+
         /* 类选择器，样式点定义，结构类调用 */
         .blue {
             color: blue;
         }
+
         .yellowgreen {
             color: yellowgreen;
         }
-        .blue_box{
+
+        .blue_box {
             width: 150px;
             height: 100px;
             background-color: blue;
             color: yellow;
         }
+
         .yellowgreen_box {
             width: 150px;
             height: 100px;
@@ -30,14 +35,15 @@
         }
     </style>
 </head>
+
 <body>
     <h3>1.选择器的作用</h3>
     <p>选择器就是将标签选出来的东西，也称为选择符。CSS是用来做两件事的：<br>
-    1.找到对应的标签（选对人）<br>
-    2.设置这些标签的属性（做对事）</p>
+        1.找到对应的标签（选对人）<br>
+        2.设置这些标签的属性（做对事）</p>
     <p>选择器可以分成基础选择器和符合选择器两类<br>
-    · 基础选择器是有单个选择器构成的
-    · 基础选择器又包括<strong>标签选择器、类选择器、id选择器和通配符选择器</strong></p>
+        · 基础选择器是有单个选择器构成的
+        · 基础选择器又包括<strong>标签选择器、类选择器、id选择器和通配符选择器</strong></p>
     <a href="https://www.w3school.com.cn/cssref/css_selectors.asp">CSS选择器参考手册</a>
     <h4>1.标签选择器</h4>
     <p>标签名作为选择器，就可以把这一大类标签<strong>全部</strong>选出来，进行修改</p>
@@ -46,21 +52,21 @@
     <p>能快速的修改一类的所有标签，但是不能差异化设计</p>
     <h4>2.类选择器(非常强大)</h4>
     <p>可以单独选择一个或者某几个标签。格式：<br>
-    <strong>.类名</strong>{<br>
-        属性1：属性值1；  <br>
+        <strong>.类名</strong>{<br>
+        属性1：属性值1； <br>
         ...<br>
-    }<br></p>
+        }<br></p>
     <ul>
-        <li class = 'blue'>我是第一个li</li>
-        <li class = 'yellowgreen'>我是第二个li</li>
-        <li class = 'blue'>我是第三个li</li>
-        <li class = 'yellowgreen'>我是第四个li</li>
+        <li class='blue'>我是第一个li</li>
+        <li class='yellowgreen'>我是第二个li</li>
+        <li class='blue'>我是第三个li</li>
+        <li class='yellowgreen'>我是第四个li</li>
     </ul>
     <h5>注意：</h5>
     <p>1. 类选择器用“.”进行标识，后面紧跟类名（类名起的要有意义）<br>
-    2. 不能用标配名来作为类选择器名<br>
-    3. 可以在名字里加下划线<br>
-    4. 不用用纯数字或中文命名</p>
+        2. 不能用标配名来作为类选择器名<br>
+        3. 可以在名字里加下划线<br>
+        4. 不用用纯数字或中文命名</p>
     <h5>常用类命名规则</h5>
     <p>
         1.头：header <br>
@@ -82,22 +88,23 @@
     </p>
 
     <h4>3.使用类选择器画盒子</h4>
-    <div class = 'blue_box'>蓝色</div>
-    <div class = 'yellowgreen_box'>黄绿色</div>
-    <div class = 'blue_box'>蓝色</div>
+    <div class='blue_box'>蓝色</div>
+    <div class='yellowgreen_box'>黄绿色</div>
+    <div class='blue_box'>蓝色</div>
 
     <h4>4.类选择器_多类名</h4>
     <p>可以在class里写过个类名，但是必须要用空格分开</p>
 
     <h4>5.id选择器</h4>
     <p>格式：<br>
-    <strong>#id名{<br>
-        ...:...; <br>
-    }</strong></p>
+        <strong>#id名{<br>
+            ...:...; <br>
+            }</strong></p>
 
     <h4>6.通配符选择器</h4>
     <p>选择所有的标签，用*定义</p>
 
 
 </body>
+
 </html>

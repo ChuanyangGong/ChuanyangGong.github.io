@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day5</title>
+
+    <style>
+        .red {
+            color: red;
+        }
+
+        /* 把ol里的li选出来改颜色 */
+        ol li {
+            color: yellowgreen;
+        }
+
+        .box {
+            width: fit-content;
+            height: fit-content;
+            background-color: rgb(174, 212, 255);
+        }
+
+        .nev>a {
+            color: chocolate;
+        }
+
+        a:link {
+            color: #333;
+            text-decoration: none;
+
+        }
+
+        a:hover {
+            color: yellowgreen;
+        }
+
+        a:active {
+            color: orange;
+        }
+
+        input:focus {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>CSS复合选择器</h2>
+    <p>复合选择器就是将基础选择器组合在一起，主要包含<br>
+        · 后代选择器<br>
+        · 子选择器<br>
+        · 并集选择器<br>
+        · 伪类选择器<br>
+    </p>
+    <h4>1.后代选择器（非常重要）</h4>
+    <p><strong class="red">后代选择器</strong>又称<span
+            class="red">包含选择器</span>，可选择父元素里的子元素.其写法就是把外层标签写在前面，内层标签写在后面，中间用空格分隔，当标签发生嵌套时，内层标签就是外层标签的后代</p>
+    <div class='box'>
+        <p><strong>元素1 元素2 { ... }</strong></p>
+    </div>
+    <p>比如li即在ol里也可以在ul里，这样可以只选择其中的一个</p>
+    <ol>
+        <li>我是ol的小il</li>
+        <li>我是ol的小il</li>
+        <li>我是ol的小il</li>
+    </ol>
+    <ul>
+        <li>我是ul的小li</li>
+        <li>我是ul的小li</li>
+        <li>我是ul的小li</li>
+    </ul>
+
+    <h4>2.子选择器（重要）</h4>
+    <p><span class="red">子元素选择器（子选择器）</span>只能选择作为某元素的最近一级子元素。简单理解就是选亲儿子元素。</p>
+    <p><strong class="red">用大于号隔开</strong></p>
+    <div class="box">元素1>元素2 {样式声明}</div>
+    <ul class="nev">
+        <a href="#">我是儿子</a>
+        <li><a href="#">我是孙子</a></li>
+    </ul>
+
+    <h4>3.并集选择器（重要）</h4>
+    <p><span class="red">并集选择器可以选择多组标签，同时为他们定义相同的样式</span>，通常用于集体声明</p>
+    <p><strong class="red">用，分割</strong></p>
+    <div class="box">标签2, 标签2 {样式声明}</div>
+
+    <h4>4.伪类选择器</h4>
+    <p>鼠标放到某个文字上，文字会发送改变都是通过伪类选择器来实现的，<span class="red">伪类选择器</span>用于向某些选择器添加特殊的效果，比如给连接添加特殊效果，或选择第1个，第n个元素</p>
+    <p>伪类选择器最大的特点是<span class="red">用冒号（:）表示</span></p>
+    <p>伪类选择器有很多种，比如连接伪类，结构伪类等</p>
+    <h5>1.连接伪类选择器</h5>
+    <div class="box">
+        <p>a:link&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/*选择所有未被访问的连接*/ <br>
+            a:visited &nbsp;&nbsp;&nbsp;&nbsp;/*选择所有已被访问的连接*/ <br>
+            a:hover &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/*选择鼠标指针位于其上的连接*/ <br>
+            a:active &nbsp;&nbsp;&nbsp;&nbsp;/*选择活动连接(鼠标按下未弹起的连接)*/</p>
+    </div>
+    <p><a href="#">你把鼠标放上来试试，会变颜色哦！你在点击试试，也会变颜色哦！</a></p>
+
+    <p><strong class="red">连接伪类注意事项</strong><br>
+        1.为了确保生效，请按照<span class="red">LVHA</span>的顺序声明：link-:visted-:hover-:active <br>
+        2.因为a连接在浏览器中具有默认样式，所以我们在实际开发中需要给链接单独指定样式。 <br></p>
+
+    <p><strong class="red">连接伪类选择器在实际工作开发中的写法：</strong><br>
+    <div class="box">
+        <p>/*a 是标签选择器 所有连接*/ <br>
+            a { <br>
+            &nbsp;&nbsp;color: gray; <br>
+            } <br>
+            /* :hover 是连接伪类选择器 鼠标经过 */ <br>
+            a:hover { <br>
+            &nbsp;&nbsp;color: red; /* 鼠标经过的时候，有原来的灰色变成红色 */ <br>
+            } <br></p>
+    </div>
+    <p>这样的效果就是连接平时是一个颜色，鼠标放上去以后变成另一个颜色</p>
+
+    <h4>5.focus伪类选择器</h4>
+    <p><span class="red">:focus伪类选择器</span>用于选择获得交点的表单元素。</p>
+    <p>焦点就是光标，一般情况下 input 类表单元素才能获取，因此这个选择器主要针对于表单元素来说。</p>
+    <div class="box">
+        <p>input:focus { <br>
+            &nbsp;&nbsp;background-color: yellow; <br>
+            }</p>
+    </div>
+    <p>鼠标点击地下的小框底色就会变哦！</p>
+    <input type="text">
+
+
+</body>
+
+</html>

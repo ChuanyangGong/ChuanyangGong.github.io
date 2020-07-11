@@ -145,31 +145,31 @@
 
     <h4>2.行内样式表</h4>
     <p>行内样式表是在元素内部的style属性中设定CSS格式，适用于比较简单的修改样式<br>
-    如: <strong>p style = "color: red; font-size: 12px;"</strong>  </p>
-    <p style = "color: yellowgreen; font-size: 12px;">青春不常在，抓紧谈恋爱</p>
+        如: <strong>p style = "color: red; font-size: 12px;"</strong> </p>
+    <p style="color: yellowgreen; font-size: 12px;">青春不常在，抓紧谈恋爱</p>
     <P>并没有体现结构与样式相分离，一般使用的比较少</P>
 
     <h4>3.外部样式表（最常用）</h4>
-    <p style = "text-indent: 2em;">实际开发都是外部样式表，适合于样式比较多的情况。核心是单独写到CSS文件中，之后把CSS引入到HTML页面中使用</p>
+    <p style="text-indent: 2em;">实际开发都是外部样式表，适合于样式比较多的情况。核心是单独写到CSS文件中，之后把CSS引入到HTML页面中使用</p>
     <p>分两步：<br>
-    1.新建.css后缀名的文件（在这个文件里只有样式，没有文件，不用写style标签）<br>
-    2.在HTML页面中，使用link标签引入这个文件<br>
-    <strong>link rel = "stylesheet" href = "css文件路径"</strong>写在head里</p>
+        1.新建.css后缀名的文件（在这个文件里只有样式，没有文件，不用写style标签）<br>
+        2.在HTML页面中，使用link标签引入这个文件<br>
+        <strong>link rel = "stylesheet" href = "css文件路径"</strong>写在head里</p>
 
     <h3>综合案例</h3>
     <a href="example/news.html" target="_blank">新闻案例</a>
 
     <h3>chrome调试工具（非常重要）</h3>
     <h4>1.打开调试工具</h4>
-    <p>打开Chrome浏览器，按下<strong class = 'red'>F12键</strong>或者<strong class = 'red'>右击页面空白处->检查</strong></p>
+    <p>打开Chrome浏览器，按下<strong class='red'>F12键</strong>或者<strong class='red'>右击页面空白处->检查</strong></p>
 
     <h4>2.使用调试工具</h4>
-    <p>① <strong class = 'red'>Ctrl+滚轮</strong>可以放大开发工具代码大小<br>
-    ②左边是HTML元素结构，右边是CSS样式<br>
-    ③右边CSS样式可以改动数值（左右箭头或者直接输入）和检查颜色<br>
-    ④<strong class = 'red'>Ctrl+0</strong>复原浏览器大小<br>
-    ⑤如果点击元素，发现右侧没有样式引入，极有可能是类名或样式引入错误<br>
-    ⑥如果有样式，但样式前面有<strong class = 'red'>黄色感叹号提示</strong>则样式属性书写错误
+    <p>① <strong class='red'>Ctrl+滚轮</strong>可以放大开发工具代码大小<br>
+        ②左边是HTML元素结构，右边是CSS样式<br>
+        ③右边CSS样式可以改动数值（左右箭头或者直接输入）和检查颜色<br>
+        ④<strong class='red'>Ctrl+0</strong>复原浏览器大小<br>
+        ⑤如果点击元素，发现右侧没有样式引入，极有可能是类名或样式引入错误<br>
+        ⑥如果有样式，但样式前面有<strong class='red'>黄色感叹号提示</strong>则样式属性书写错误
     </p>
 </body>
 
