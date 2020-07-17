@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #f3f5f7;
+}
+
+.header {
+    height: 42px;
+    margin: 30px auto;
+}
+
+.logo {
+    float: left;
+    height: 42px;
+    width: 196px;
+}
+
+.nav {
+    float: left;
+    margin-left: 70px;
+}
+
+.nav ul li {
+    float: left;
+    margin-left: 26px; 
+}
+
+.nav ul li:hover {
+    border-bottom: 2px solid #00a4ff;
+}
+
+.nav ul li a {
+    display: block;
+    height: 40px;
+    padding: 0 8px;
+    line-height: 40px;
+    font-size: 18px;
+    color: #050505;
+}
+
+.search {
+    float: left;
+    width: 412px;
+    height: 42px;
+    margin-left: 87px;
+}
+
+.search input {
+    float: left;
+    width: 345px;
+    height: 38px;
+    margin: 1px 0;
+    border: 1px solid #00a4ff;
+    padding-left: 15px;
+    border-right: 0px;
+    color: #bfbfbf;
+    font-size: 14px;
+}
+
+.search button {
+    float: left;
+    width: 50px;
+    height: 40px;
+    margin: 1px 0;
+    border: 0;
+    background-image: url(images/search.png);
+}
+
+.user {
+    float: right;
+    width: 120px;
+    height: 42px;
+    margin-right: 32px;
+}
+
+.user .touxiang {
+    float: left;
+    width: 32px;
+    height: 32px;
+    background: url(images/user.png) no-repeat center;
+    margin: 5px 6px;
+}
+
+.user .name {
+    float: left;
+    height: 32px;
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666666;
+    line-height: 32px;
+}
+
+.banner {
+    height: 420px;
+    background-color: #1c036c;
+}
+
+.banner .w {
+    height: 420px;
+    background: url(images/banner2.png) no-repeat top center;
+}
+
+.banner .subnav {
+    float: left;
+    height: 420px;
+    width: 190px;
+    background-color: rgba(0,0,0,.3);
+}
+
+.banner .subnav ul {
+    margin: 13px 20px;
+}
+
+.banner .subnav li a {
+    display: block;
+    height: 44px;
+    width: 150px;
+    color: #fff;
+    line-height: 44px;
+    font-size: 14px;
+}
+
+.banner .subnav li a:hover {
+    color: #00b4ff;
+}
+
+.banner .subnav li a span {
+    float: right;
+}
+
+.banner .course {
+    float: right;
+    width: 228px;
+    height: 300px;
+    background-color: #ffffff;
+    margin-top: 50px;
+}
+
+.banner .course h2 {
+    display: block;
+    height: 48px;
+    width: 228px;
+    background-color: #9bceea;
+    line-height: 48px;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+}
+
+.banner .course .bd ul {
+    padding: 0 18px;
+}
+
+.banner .course .bd ul li {
+    border-bottom: 1px solid #efefef;
+    padding: 14px 0;
+}
+
+.banner .course .bd ul li h4 {
+    font-size: 16px;
+    color: #4e4e4e;
+}
+.banner .course .bd ul li p {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+.banner .course .bd>a {
+    margin: 5px 14px;
+    display: block;
+    height: 38px;
+    width: 198px;
+    border: #22b0ff 1px solid;
+    color: #00a4ff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 38px;
+    font-weight: 700;
+}
+
+/* 精品推荐 */
+.goods {
+    height: 60px;
+    background-color: #fff;
+    margin-top: 8px;
+    box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, .1);
+    line-height: 60px;
+    text-align: center;
+}
+
+.goods h3 {
+    display: block;
+    float: left;
+    width: 132px;
+    color: #00a4ff;
+    font-size: 16px;
+}
+
+.goods ul {
+    float: left;
+}
+
+.goods ul li {
+    float: left;
+}
+
+.goods ul li a {
+    padding: 0 35px;
+    border-left: 1px #ccc solid;
+}
+
+
+
+.goods>a {
+    display: block;
+    margin-right: 16px;
+    float: right;
+    font-size: 14px;
+    color: #00a4ff;
+}

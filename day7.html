@@ -5,9 +5,237 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>day7</title>
+    <style>
+        .red {
+            color: red;
+        }
+
+        .float {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            float: left;
+        }
+
+        .fix {
+            height: 100px;
+        }
+
+        .case1_box {
+            width: 1610px;
+            height: 605px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        .case1_left {
+            float: left;
+            width: 380px;
+            height: 605px;
+            background-color: rgb(129, 142, 157);
+        }
+
+        .case1_right {
+            float: right;
+            width: 1230px;
+            height: 605px;
+            background: url(images/fridge.jpg) center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .case1_left ul {
+            margin-top: 25px;
+        }
+
+        .case1_left ul li {
+            padding-left: 35px;
+        }
+
+        .case1_left ul li a {
+            display: block;
+            height: 55px;
+            line-height: 55px;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .case1_left ul li:hover {
+            background-color: rgb(255, 103, 0);
+        }
+
+        .case2_box {
+            width: 1226px;
+            height: 285px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        .case2_box li {
+            width: 296px;
+            height: 285px;
+            background-color: purple;
+            float: left;
+            margin-right: 14px;
+        }
+
+        .case2_box .case2_last {
+            margin-right: 0;
+        }
+    </style>
 </head>
 
 <body>
+    <h3>CSS浮动</h3>
+    <h4>1.浮动（float）</h4>
+    <h5>1.1 传统网页布局的三种方式</h5>
+    <ul>
+        <li>普通流（标准流）</li>
+        <li>浮动</li>
+        <li>定位</li>
+    </ul>
+    <h5>1.2标准流</h5>
+    <p><span class="red">所谓的标准流：就是标签按照规定好默认方式排列</span></p>
+    <p>标准流是最基本的布局方式</p>
+    <p><span class="red">注意：实际开发中，一个页面基本都包含这三种布局方式</span></p>
+
+    <h5>1.3为什么需要浮动？</h5>
+    <p>一些极为常见的布局效果标准流没法做，需要用浮动 <br>
+        浮动最典型的应用：可以让多个块元素一排显示</p>
+    <p><strong class="red">网页布局第一准则：</strong><span class="red">多个块级元素纵向排列找标准流，多个块级元素横向排列找浮动。</span></p>
+
+    <h5>1.4什么是浮动</h5>
+    <p><span class="red">float</span>属性用于创建浮动框，将其移动到一遍，直到左边缘触及包含块或另一个浮动框的边缘。 <br> </p>
+    <p class="red">
+        语法：<br>
+        选择器 { float : 属性值} <br>
+        none : 元素不浮动(<strong>默认</strong>) <br>
+        left : 元素向左浮动 <br>
+        right : 元素向右浮动</p>
+    <div class="fix">
+        <div class="float">左青龙</div>
+        <div class="float">右白虎</div>
+    </div>
+
+    <h5>1.5浮动特性(重难点)</h5>
+    <p><span class="red">1.浮动元素会脱离标准流（脱标）</span><br>
+        2.浮动的元素会一行内相识并且元素顶部对齐<br>
+        3.浮动元素会具有行内块元素的特性</p>
+
+    <p><strong class="red">设置了浮动(float)的元素最重要的特性</strong> <br>
+        1.脱离标准流的控制移动到指定位置 <br>
+        2.浮动的盒子<span class="red">不再保留原先的位置</span></p>
+    <p><strong class="red">注意</strong><span class="red">浮动的元素时互相贴靠在一起的（不会有缝隙），如果父级宽度装不下这些浮动的盒子，多出的盒子会另起一行对齐。</span></p>
+
+    <h5>1.6浮动元素经常和标准流父级搭配使用</h5>
+    <p>为了约束浮动元素的位置，我们网页布局一般采用的策略是：<br>
+        <span class="red">先用标准流的父元素排列上下位置，之后内部子元素采用浮动排列左右位置，符合网页布局的第一准则</span></p>
+    <h4 class="red">案例：小米布局案例</h4>
+    <div class="case1_box">
+        <div class="case1_left">
+            <ul>
+                <li><a href="#">手机 电话卡</a> </li>
+                <li><a href="#">电视 盒子</a></li>
+                <li><a href="#">笔记本 显示器 平板</a></li>
+                <li><a href="#">家电 插线板</a></li>
+                <li><a href="#">出行 穿戴</a></li>
+                <li><a href="#">智能 路由器</a></li>
+                <li><a href="#">电源 配件</a></li>
+                <li><a href="#">健康 儿童</a></li>
+                <li><a href="#">耳机 音响</a></li>
+                <li><a href="#">生活 箱包</a></li>
+            </ul>
+        </div>
+        <div class="case1_right"></div>
+    </div>
+
+    <h4 class="red">案例2</h4>
+    <ul class="case2_box">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li class="case2_last">4</li>
+    </ul>
+
+    <h4>为什么要清除浮动？</h4>
+    <p>父盒子的高度一定是写死的吗？理想中的状态应该是让子盒子撑开父亲，有多少孩子，我父盒子就有多高。 <br>
+        但是不给父盒子高度，子盒子浮动不会撑开标准流父亲的盒子</p>
+    <p>清除浮动可以解决这个问题</p>
+
+    <h4>3.清除浮动</h4>
+    <p>清除浮动的本质就是造成清除浮动造成的影响。 <br>
+        <span class="red">
+            语法： <br>
+            选择器 { clear: 属性值；} <br>
+            属性值：left 不允许左侧有浮动元素、right 不允许右侧有浮动元素、both 薄允许两侧浮动的影响
+        </span></p>
+
+    <h4>清除浮动的方法</h4>
+    <p>1.额外标签法也称为隔墙法，是W3C推荐的做法。 <br>
+        <span class="red">2.父亲添加overflow属性 <br>
+            3. 父亲添加after伪元素 <br>
+            4.父亲添加双伪元素</span></p>
+
+    <h4>3.1额外标签法</h4>
+    <p><strong class="red">额外标签法</strong>也称为<span class="red">隔墙法</span>,是W3C推荐的做法。 <br>
+        <span class="red">额外标签法</span>会在浮动元素末尾添加一个空标签，在该标签内clear浮动。 <br>
+        优点：通俗易懂，书写方便 <br>
+        缺点：添加许多无意义的标签，结构化较为差 <br>
+        <span class="red">注意：新增的元素必须是块级元素或者br</span></p>
+
+    <h4>3.2给父亲添加<span class="red">overflow</span>属性</h4>
+    <p>可以给父级添加overflow属性，将其属性值设为hidden、auto或scroll <br>
+        优点：代码简洁 <br>
+        缺点：无法显示溢出的部分</p>
+
+    <h4>3.3:after伪元素法</h4>
+    <p><span class="red">:after</span>方法是额外标签法的升级版。也是给父元素添加 <br>方法如下：<br>
+    </p>
+    <p class="red">
+        .clearfix:after { <br>
+        &nbsp;&nbsp;content: ""; <br>
+        &nbsp;&nbsp;display: block; <br>
+        &nbsp;&nbsp;height: 0; <br>
+        &nbsp;&nbsp;clear: both; <br>
+        &nbsp;&nbsp;visibility: hidden; <br>
+        } <br>
+        .clearfix P /* IE6、7 专有 */ <br>
+        &nbsp;&nbsp;*zoom: 1; <br>
+        } <br>
+    </p>
+    <p>优点：没有增加标签，结构更简单 <br>
+        缺点：需要照顾低版本浏览器 <br>
+        <strong>大厂都是这么做的</strong></p>
+
+    <h4>3.4双伪元素清除浮动</h4>
+    <p>写法：</p>
+    <p><strong class="red">.clearfix:before, <br>
+            .clearfix:after { <br>
+            &nbsp;&nbsp;content: ""; <br>
+            &nbsp;&nbsp;display: table; <br>
+            } <br>
+            .clearfix:after { <br>
+            &nbsp;&nbsp;clear:both; <br>
+            } <br>
+            .clearfix { <br>
+            &nbsp;&nbsp;*zoom: 1; <br>
+            } <br>
+        </strong></p>
+    <p>优点：代码更简洁 <br>
+        缺点：还是要照顾低版本浏览器 <br>
+        小米、百度使用这种方法</p>
+
 
 </body>
 
