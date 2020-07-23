@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day9</title>
+
+    <style>
+        /* 字体图标声明 */
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?6pf5un');
+            src: url('fonts/icomoon.eot?6pf5un#iefix') format('embedded-opentype'),
+                url('fonts/icomoon.ttf?6pf5un') format('truetype'),
+                url('fonts/icomoon.woff?6pf5un') format('woff'),
+                url('fonts/icomoon.svg?6pf5un#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .s {
+            font-weight: 700;
+        }
+
+        .rs {
+            font-weight: 700;
+            color: red;
+        }
+
+        .box1 {
+            width: 60px;
+            height: 60px;
+            background: url(images/script.png) -182px 0;
+        }
+
+        .box2 {
+            width: 27px;
+            height: 25px;
+            margin-top: 10px;
+            background: url(images/script.png) -155px -106px;
+        }
+
+        .font {
+            font-family: 'icomoon';
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>CSS高级技巧</h2>
+    <h3>1.精灵图</h3>
+    <h4>1.1 为什么需要精灵图</h4>
+    <p>一个网页中往往会用到很多小的背景图像作为修饰，当网页中的图像过多时，服务器就会频繁的接收和发送图片的请求，造成服务器压力过大，这将大大降低页面的加载速度。</p>
+    <p>因此，<span class="rs">为了有效地减少服务器接受和发送请求的次数，提高页面的加载速度，</span>出现了<span class="red">CSS精灵图技术</span></p>
+    <p><span class="red">核心原理：将网页中的一些小背景图片整合到一张大图中，这样服务器只需要一次请求就可以了。</span></p>
+
+    <h4>精灵图（sprites）的使用</h4>
+    <p>使用精灵图核心： <br>
+        1. 精灵技术主要针对背景图片使用。就是把小背景图片整合到一张大图中。<br>
+        2. 这个大图片也称为sprites精灵图或者雪碧图 <br>
+        3. 移动背景图片位置，此时可以使用<span class="red">background-position</span><br>
+        4. 移动的距离就是这个目标图片的<span class="red">x</span>和<span class="red">y</span>坐标，注意网页中的坐标是有所不同的。<br>
+        5. 一般都是往上和往右移，所以都是负值。<br>
+        6. 使用精灵图的时候需要精准测量，每个小背景图片的大小和位置
+    </p>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    <h3>2. 字体图标</h3>
+    <h4>2.1 字体图标的产生</h4>
+    <p>字体图标使用场景：主要用于显示网页中通用、常用的一些小图标。</p>
+    <p>精灵图有诸多优点，但缺点也很明显。 <br>
+        1. 图片文件还是比较大 <br>
+        2. 图片本身放大和缩小会失真。 <br>
+        3. 一旦图片制作完成想要更换非常复杂 <br>
+        此时，有一种技术的出现很好的解决了以上问题，就是<span class="red">字体图标iconfont</span> <br>
+        <span class="red">字体图标展示的是图标，本质是字体</span></p>
+    <p>优点： <br>
+        1.轻量级 <br>
+        2. 灵活性：本质是文字，可以随意更改样式 <br>
+        3.兼容性：几乎所有浏览器都支持</p>
+
+    <h4>2.2 字体图标的下载</h4>
+    <p>字体图标是一些网页常见的小图标，我们直接从网页上下载即可。因此可以分为这几步： <br>
+        1. 字体图标的下载 <br>
+        2. 字体图标的引入（引入到html页面中） <br>
+        3. 字体图标的追加（以后添加新的小图标）</p>
+    <p>
+    <div class="s">推荐下载网址：</div>
+    </p>
+    <p> <span class="rs">icomoon字库</span> <span class="red">icomoon.io</span></p>
+    <p>成立较早，内容繁多，非常全面，唯一的遗憾是国外服务器，打开网速较慢</p>
+    <p><span class="rs">阿里iconfont字库</span> www.iconfont.cn </p>
+
+    <h4>2.3 字体图标的引入</h4>
+    <p><span class="red">下载完毕后，注意原先的文件不要删</span></p>
+    <p>1.把下载包里的<span class="red">fonts</span>文件夹放在根目录下 <br>
+        2. 在CSS样式中全局声明字体：简单理解把这些字体文件通过CSS引入到我们的页面当中。<br>
+        一定注意字体文件路径的问题。 <br><br>
+        @font-face { <br>
+        &nbsp;&nbsp;<span class="red">font-family: 'icomoon'; <br>
+        </span>
+        &nbsp;&nbsp;src: url('fonts/icomoon.eot?7kkyc2'); <br>
+        &nbsp;&nbsp;src: url('fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'), <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;url('fonts/icomoon.ttf?7kkyc2') format('truetype'), <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;url('fonts/icomoon.woff?7kkyc2') format('woff'), <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;url('fonts/icomoon.svg?7kkyc2#icomoon') format('svg'); <br>
+        &nbsp;&nbsp;font-weight: normal; <br>
+        &nbsp;&nbsp;font-style: normal;<br>
+        }
+    </p>
+    <p class="rs">style.css文件中有上面的这个声明的代码，可以直接复制 <br>
+        demo.html</p>
+    <p><span class="font"></span><span class="font"></span></p>
+
+    <h4>2.4 字体图标的追加</h4>
+    <p>如果原先的图标不够用，我们需要添加新的字体图标到原来的字体中。 <br>
+        只需把压缩包里的<span class="red">selection.json重新上传</span>，然后选中自己想要更新的图标，重新下载压缩包，并替原来的文件即可</p>
+
+
+
+
+</body>
+
+</html>
