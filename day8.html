@@ -65,6 +65,35 @@
             top: 100px;
             right: 0;
         }
+
+        .case {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 448px;
+            height: 252px;
+            background-color: pink;
+            margin: 30px auto;
+        }
+
+        .case img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .case .mask {
+            position: absolute;
+            display: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .3);
+        }
+
+        .case:hover .mask {
+            display: block;
+        }
     </style>
 </head>
 
@@ -183,7 +212,35 @@
     <h5>3.绝对定位（固定定位）会完全压住盒子</h5>
     <p>浮动元素不同，只会压住盒子，不会压住内容。</p>
 
+    <h3>2.元素的显示与隐藏</h3>
+    <p>类似网站广告，当我们点击关闭就不见了，但是我们重新刷新页面，会重新出现</p>
+    <p>本质：<span class="red">让一个元素在页面中隐藏或者显示出来</span></p>
+    <p>1.display显示隐藏 <br>
+        2.visibility显示隐藏 <br>
+        3.overflow溢出显示隐藏</p>
 
+    <h4>4.1 display属性（非常重要）</h4>
+    <p>display: none; 隐藏元素 <br>
+        display: block; 转换为块级元素或者显示元素的作用</p>
+    <p>
+        <span class="red s">none了以后不但元素隐藏了，而且位置也没了</span>
+    </p>
+    <p>不想看见就改成none，想看见就改成block，<span class="s">非常非常重要</span></p>
+
+    <h4>2.2 visibility 可见的</h4>
+    <p>默认：inherit，根据父亲决定是否可见。 <br>
+        · visible 元素可视 <br>
+        · hidden 元素隐藏</p>
+    <p class="red s">元素隐藏后继续占有原来的位置</p>
+
+    <h4>2.3 overflow 溢出</h4>
+    <p><span class="red">overflow</span>属性是对溢出的部分进行隐藏或者显示，默认是visible，hidden是不显示，scroll是溢出的部分显示滚动条，auto是在需要的时候添加滚动条。</p>
+
+    <h4>土豆案例</h4>
+    <div class="case">
+        <div class="mask"></div>
+        <img src="images/tudou.jpg" alt="">
+    </div>
 
 
 </body>
