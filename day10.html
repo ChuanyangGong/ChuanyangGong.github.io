@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day10</title>
+    <style>
+        .r {
+            color: red;
+        }
+
+        .s {
+            font-weight: 700;
+        }
+
+        .rs {
+            color: red;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>HTML5和CSS3提高</h2>
+    <h3>1.HTML5的新特性</h3>
+    <p>新特性有兼容性问题，基本是IE9+以上的版本的浏览器才支持</p>
+    <h4>1.1 HTML5新增的语义化标签</h4>
+    <p class="s">header : 头部标签 <br>
+        nav : 导航标签 <br>
+        article : 内容标签 <br>
+        section : 定义文档某个区域 <br>
+        aside : 侧边栏标签 <br>
+        footer : 尾部标签</p>
+
+    <h4>1.2 HTML5新增多媒体标签</h4>
+    <p>新增的多媒体标签主要包含两个：</p>
+    <p class="r">1. 音频： audio <br>
+        2. 视频： video </p>
+
+    <h4>1.视频 video</h4>
+    <p>当前video元素支持三种视频格式(mp4，webM，Ogg)：尽量使用mp4格式（IE、safari只支持mp4）</p>
+    <p class="s">语法：</p>
+    <p class="r">video src = "文件地址" controls = "controls"</p>
+    <p>常见属性</p>
+    <p>autoplay : autoplay 视频就绪自动播放 <br>
+        controls : controls 向用户显示播放控件 <br>
+        width : xx px 播放器宽度 <br>
+        height : xx px 播放器高度 <br>
+        loop : loop 循环播放 <br>
+        preload : auto/none 规定是否预加载视频 <br>
+        src : url 视频地址 <br>
+        poster : imgurl 加载等待的画面图片 <br>
+        muted : muted 静音播放</p>
+
+    <h4>2.音频 audio</h4>
+    <p>当前audio支持三种音频格式：MP3(都支持)，Wav、Ogg</p>
+    <p class="s">语法</p>
+    <p class="r">audio src = "文件地址" controls = "controls"</p>
+
+    <h4>1.3 HTML5新增的input类型</h4>
+    <p class="r">
+        type = "email" 限制用户输入必须为Email类型
+        type = "url" 限制用户输入必须为url类型
+        type = "date" 限制用户输入必须为日期类型
+        type = "time" 限制用户输入必须为时间类型
+        type = "month" 限制用户输入必须为月类型
+        type = "week" 限制用户输入必须为周类型
+        type = "number" 限制用户输入必须为数字类型
+        type = "tel" 手机号
+        type = "search" 搜索框
+        type = "color" 生成一个颜色选择表单
+    </p>
+
+    <h4>1.4 HTML5新增的表单属性</h4>
+    <p class="s"> required = "required" 表示内容不能为空 <br>
+        placeholder = 提示文本 表单的提示信息，存在默认值将不显示 <br>
+        autofocus = autofocus 自动聚焦属性，页面加载完成自动聚焦到指定表单 <br>
+        autocomplete = on/off 当用户在字段开始输入，浏览器基于之前输入过的值，显示出之前填写过的值，需同时加上name属性并成功提交 <br>
+        multiple = multiple 可以多选文件提交</p>
+
+    <h3>2. CSS3新特性</h3>
+    <h4>2.1 属性选择器</h4>
+    <p>利用属性选择器可以通过属性来选择，如 <br>
+        input[value] <br>
+        input[value = xxxx] <br>
+        input[value ^= xxx] 以xxx开头的元素<br>
+        input[value $= xxx] 以xxx结尾的元素 <br>
+        input[value *= xxx] 中间有xxx就会被选 </p>
+    <p class="rs">类选择器、伪类选择器、属性选择器权重都是10</p>
+
+
+    <h4>2.2 结构伪类选择器</h4>
+    <p>E :first-child 选择元素E里的第一个孩子 <br>
+        last-child <br>
+        nth-child(n) n可以是数字，也可以是关键字(odd、even)<br>
+        E :first-of-type <br>
+        last-of-type <br>
+        nth-of-type(n)</p>
+
+    <h4>2.4 伪元素选择器(重点)</h4>
+    <p>伪元素选择器可以帮助我们利用CSS创建新标签，而不需要HTML标签，从而简化HTML结构</p>
+    <p>
+        element::before{ 样式 } 在元素前面插入内容 <br>
+        element::after{ 样式 } 在元素后面插入内容 <br>
+    </p>
+    <p class="rs">注意：</p>
+    <p>· <span class="r">before</span>和<span class="r">after</span>创建一个元素，但是输入行内元素 <br>
+        · 新创建的元素在文档树中找不到，所以称为<span class="r">伪元素</span> <br>
+        · before 和 after 必须有<span class="r">content属性</span> <br>
+        · 伪元素选择器和标签选择器一样，权重为1</p>
+
+    <h4>2.5 CSS3盒子模型</h4>
+    <p>CSS3中可以通过 <span class="r">box-sizing</span> 来指定盒模型，有2个值：即可指定为<span
+            class="r">content-box(默认)、border-box(不在撑大盒子)</span></p>
+
+    <h4>2.6 CSS3其他特性(了解)</h4>
+    <p class="s">CSS3滤镜filter:</p>
+    <p>filter CSS属性将模糊或颜色偏移等图形效果应用于元素。</p>
+    <p class="r">filter: 函数(); 例如 ： filter : blur(5px); blur模糊处理</p>
+
+    <p class="s">CSS3 calc函数:</p>
+    <p>calc() 此CSS函数让你在声明CSS属性值时执行一些计算。</p>
+
+    <h4>2.7 CSS3过渡（重点）</h4>
+    <p>过渡(transition)是CSS3中具有颠覆性的特征之一，我们可以在不使用Flash动画或JavaSvript的情况下，当元素从一种样式变换为另一种样式时为元素添加效果。 <br>
+        <span class="r">我们现在经常和:hover一起搭配使用</span></p>
+
+    <p class="rs">transition: 要过渡的属性 花费时间 运动曲线 何时开始 , x x x x；</p>
+    <p class="rs">谁做过渡给谁加，多个属性用,分割，都要变就用all</p>
+
+</body>
+
+</html>

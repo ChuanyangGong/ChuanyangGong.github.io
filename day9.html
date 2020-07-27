@@ -50,6 +50,15 @@
             font-family: 'icomoon';
             font-size: 20px;
         }
+
+        .box_tri {
+            height: 0;
+            width: 0;
+            border-top: 10px pink solid;
+            border-bottom: 10px green solid;
+            border-right: 10px red solid;
+            border-left: 10px blue solid;
+        }
     </style>
 </head>
 
@@ -125,8 +134,65 @@
     <p>如果原先的图标不够用，我们需要添加新的字体图标到原来的字体中。 <br>
         只需把压缩包里的<span class="red">selection.json重新上传</span>，然后选中自己想要更新的图标，重新下载压缩包，并替原来的文件即可</p>
 
+    <h3>3.CSS三角</h3>
+    <p>如果一个盒子没有内容，只有边框，每个边框都是三角形</p>
+    <div class="box_tri"></div>
+
+    <h3>4. CSS用户界面样式</h3>
+    <h4>4.1 鼠标样式 cursor</h4>
+    <p>通过cursor属性更改，属性值有：default(小白 默认)、pointer(小手)、move(移动)、text(文本)、not-allowed(禁止)</p>
+
+    <h4>4.2 表单轮廓线 outline</h4>
+    <p>ontline属性赋0值，就不会有轮廓线</p>
+
+    <h4>4.3 文本域防止拖拽</h4>
+    <p>resize属性设为none，文本域(testarea)尽量放在一行写</p>
+
+    <h3>5 vertical-align属性应用</h3>
+    <p>CSS的<span class="red">vertical-align</span>属性应用场景：经常用于设置图片或者表单（行内块元素）和文字垂直对齐。只针对行内块或行内元素有效。</p>
+    <p>语法：</p>
+    <p>vertical-align : <span class="red">baseline</span> | top | middle | bottom </p>
+    <p>baseline是基线对齐，就是文字底下所在的线。默认是基线对齐</p>
+
+    <h4>5.2 盒子底部默认空隙问题</h4>
+    <p>因为图片默认是基线对齐，所以会给文字留空隙，可以改变对齐方式，只要不是基线对齐就可以去掉。<br>
+        把图片转换为块级元素也可以，因为块级元素没有vertical-align属性</p>
+
+    <h3>6. 溢出的文字省略号显示</h3>
+    <h4>6.1 单行文本溢出省略号显示</h4>
+    <p>必须满足三个条件</p>
+    <p>1. 必须强制一行内显示文本 <br>
+        white-space: nowrap; （默认normal 自动换行） <br>
+        2. 超出部分隐藏 <br>
+        overflow: hidden; <br>
+        3. 文字用省略号代替超出部分 <br>
+        text-overflow: ellipsis</p>
+    <h4>6.2 多行文本溢出省略号显示</h4>
+    <p>有较大的兼容性问题，适用于webkit浏览器或移动端</p>
+    <p>代码：</p>
+    <p class="s">overflow: hidden; <br>
+        text-overflow: ellipsis; <br>
+        /* 弹性伸缩盒子模型显示 */ <br>
+        display: -webkit-box; <br>
+        /* 限制在一个块元素显示的文本行数 */ <br>
+        -webkit-line-clamp: 2; <br>
+        /* 设置或检索伸缩对象的子元素的排列方式 */ <br>
+        -webkit-box-orient: vertical;</p>
+
+    <h3>常见的布局技巧</h3>
+    <h4>1. margin负值的应用</h4>
+    <p>多个盒子放一起时，边框会1+1等于2，变粗，将margin设为-1可以解决这个问题，让边框重叠，只显示一个</p>
+    <p>进阶：想让鼠标经过时边框变色，因为上面说的右边盒子会压住左边盒子，所以右边框直接写不会变色，只需将所选中的盒子变为相对定位relative，即可。或者添加Z轴(z-index)</p>
+
+    <h4>2. 文字浮动效果使用小妙招</h4>
+    <p>当一个盒子是一边为图片，一边为文字，只要运用浮动（图片）不占位置，但文字（标准流中）会环绕来做</p>
 
 
+    <h4>3. 行内块巧妙布局</h4>
+    <p>一个盒子添加text-align: center，里面的行内元素和行内块元素都可以居中对齐，可以做翻页标签</p>
+
+    <h3>8 CSS初始化</h3>
+    <p>利用CSS对浏览器默认值的重设</p>
 
 </body>
 
